@@ -1,4 +1,5 @@
-# P2
-Find an in-depth assignment description in the Google Doc [here](https://docs.google.com/document/d/1Aj8K1oXH8xfJ4_37XIuSLMN4cNs1XsuvgsSNrJJG4mg/edit?usp=sharing).
-
 # G15-Final-Proj
+
+Built off of the CS160 Proj 2 template. Which means run the dev server via
+python3 manage.py migrate
+python3 manage.py runserver 0.0.0.0:8000
