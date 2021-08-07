@@ -1,0 +1,22 @@
+.imaged-container{
+    background-image:url('https://i.ibb.co/nbG7C1Y/IMG-6385.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: calc(1.7787 * 100vw);
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "one"
+        "two"
+
+}
+
+.one {
+    width: 100%;
+    background-color:transparent;
+}
+
+.two {
+    width: 100%;
+    background-color:transparent;
+}
