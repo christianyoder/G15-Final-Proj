@@ -1,13 +1,19 @@
 .main-container {
   position: absolute;
   top: 11%;
-  left: 5%;
+  left: 4%;
   height: 78%;
-  width: 90%;
+  width: 92%;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 1.5rem;
 }
 
-.font-family {
-  font: italic small-caps bold 12px/30px Georgia, serif;
+.pg-title {
+  position: absolute;
+  font-size: 6vw;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: white;
+  right: 0;
+  top: -6%;
 }
