@@ -23,7 +23,7 @@
     <!-- Top Navbar -->
     <nav class="navbar fixed-top navbar-dark">
         <div class="container-fluid">
-            <button class="btn navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <button class="btn navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
@@ -31,25 +31,25 @@
     <!-- End Top Navbar -->
 
     <!-- Off canvas Menu -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel" data-bs-backdrop="false">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <h5 class="offcanvas-title" id="offcanvasLabel" style="font: bold 30px sans-serif; color:white;">SleepSoon</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <div>
-                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+            <div style="position:fixed;top:25%;left:0%;width:100%;">
+                <div style="font: italic 20px sans-serif; color:white;position:relative;left:4%">Nicole</div>
+                <br/>
+                <div class="btn-group-vertical rounded-0" style="width:250px; position:absolute; left:0%;">
+                    <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
+                        <img src="{% static 'svg/profile1.svg' %}" />  Profile</button>
+                    <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
+                        <img src="{% static 'svg/invite1.svg' %}"/>  Invite a Friend</button>
+                    <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
+                        <img src="{% static 'svg/settings1.svg' %}" />  Settings</button>
+                </div>
             </div>
-            <div class="dropdown mt-3">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-                    Dropdown button
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
+            <div style="position:absolute;bottom:3%;color:white;"><img src="{% static 'svg/feedback1.svg' %}" />      Feedback</div>
         </div>
     </div>
     <!-- End off canvas Menu -->
