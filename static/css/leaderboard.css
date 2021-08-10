@@ -1,0 +1,42 @@
+.main-container {
+  padding: 5%;
+}
+
+.header-2 {
+  font-size: 7vw;
+  margin-bottom: 3%;
+}
+
+.header-3 {
+  font-size: 3vw;
+  font-style: italic;
+  color: grey;
+  font-weight: 600;
+  margin-bottom: 10%;
+}
+
+.board-chart {
+  margin-top: 10%;
+  background-color: lightcoral;
+  width: 100%;
+  height: 80%;
+}
+
+.board-bar {
+  font-family: 'IBM Plex Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6%;
+  background-color:#E2E2FC;
+  margin-bottom: 4%;
+  border-radius: 0.2rem;
+  font-size: 3.5vw;
+  padding: 2%;
+}
+
+#your-bar {
+  background-color: #bbbbfa;
+  width: 85%; 
+  font-weight: 900;
+}
