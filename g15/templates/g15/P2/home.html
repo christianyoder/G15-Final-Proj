@@ -10,48 +10,78 @@
     <title>Home</title>
     <!-- Install Bootstrap CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
-    
+
     <!-- Custom styles for this template -->
     <link href="{% static 'css/custom.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/handy.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/btm-nav.css' %}" rel="stylesheet">
 
 </head>
+
 <body style="background-color:#154D86">
     <!-- Top Navbar -->
-    <nav class="navbar fixed-top navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-dark">
         <div class="container-fluid">
             <button class="btn navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                 <span class="navbar-toggler-icon"></span>
-              </button>
+            </button>
         </div>
-      </nav>
-      <!-- End Top Navbar -->
+    </nav>
+    <!-- End Top Navbar -->
 
-      <!-- Off canvas Menu -->
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <!-- Off canvas Menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <div>
-            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-          </div>
-          <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
+            <div>
+                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+            </div>
+            <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                    Dropdown button
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
-      <!-- End off canvas Menu -->
+    </div>
+    <!-- End off canvas Menu -->
 
-      <!-- Bootstrap Javascript utils -->
-      <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}" ></script>
+    <!-- Main Body -->
+    <div class="main-container">
+
+    </div>
+    <!-- End Main Body -->
+
+    <!-- Bottom-Nav -->
+    <div class="btm-nav-bar">
+        <div onclick="location.href='/g15/home'" class="nav-btn" style="width: 10%">
+            <img src="{% static 'svg/home2.svg' %}" />
+        </div>
+        <div onclick="location.href='/g15/tracker'" class="nav-btn">
+            <img src="{% static 'svg/tracker1.svg' %}" />
+        </div>
+        <div onclick="location.href='/g15/explore'" class="nav-btn">
+            <img src="{% static 'svg/add1.svg' %}" />
+        </div>
+        <div onclick="location.href='/g15/leaderboard'" class="nav-btn">
+            <img src="{% static 'svg/leader1.svg' %}" />
+        </div>
+        <div onclick="location.href='/g15/social'"" class=" nav-btn" style="width: 10%">
+            <img src="{% static 'svg/social1.svg' %}" />
+        </div>
+    </div>
+    <!-- End Bottom-Nav -->
+
+    <!-- Bootstrap Javascript utils -->
+    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
 </body>
+
 </html>
