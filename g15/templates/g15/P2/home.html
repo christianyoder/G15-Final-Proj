@@ -19,7 +19,7 @@
 
 </head>
 
-<body style="background-color:#154D86">
+<body style="background-image: url('https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');">
     <!-- Top Navbar -->
     <nav class="navbar fixed-top navbar-dark">
         <div class="container-fluid">
@@ -55,14 +55,16 @@
     <!-- End off canvas Menu -->
 
     <!-- Main Body -->
-    <div class="main-container">
-        <div>
+    <div id = "homebox" class="main-container">
+        <div class="container" id="greeting">
             Hello, Nicole!
         </div>
-        <div>
-            Welcome to SleepSoon - your tool to help build a better sleep routine unique to you!
+        <div class="container" id="welcome">
+            Did you follow your sleep routine? If so, check in!
         </div>
-        <button> Check in! </button>
+        <div class="container" id="buttonbox">
+            <button id="checkinbutton" onclick="checkinFunc()"> Check in </button>
+        </div>
     </div>
     <!-- End Main Body -->
 
@@ -80,7 +82,7 @@
         <div onclick="location.href='/g15/leaderboard'" class="nav-btn">
             <img src="{% static 'svg/leader1.svg' %}" />
         </div>
-        <div onclick="location.href='/g15/social'"" class=" nav-btn" style="width: 10%">
+        <div onclick="location.href='/g15/social'" class=" nav-btn" style="width: 10%">
             <img src="{% static 'svg/social1.svg' %}" />
         </div>
     </div>
@@ -89,5 +91,43 @@
     <!-- Bootstrap Javascript utils -->
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
 </body>
+<style type="text/css">
+    #greeting {
+        padding-top: 20%;
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+        color: slategray;
+    }
+    #welcome {
+        font-size: 33px;
+        text-align: center;
+        color: lightslategray;
+        padding-top: 5%;
+    }
+    #buttonbox {
+        padding-left: 30%;
+        padding-top: 33%;
+    }
+    #checkinbutton {
+        border-radius: 15px;
+        font-size: 33px;
+        border: none;
+        background-color: lightslategray;
+        color: white;
+    }
 
+    #checkinbutton:hover {
+        background-color: lightgray;
+
+    }
+</style>
+<script type="text/javascript">
+    localStorage.setItem('streak', '0');
+    function checkinFunc() {
+        myStorage = window.localStorage;
+        var num = Number(localStorage.getItem('streak')) + 1;
+        localStorage.setItem('streak', num.toString());
+    }
+</script>
 </html>
