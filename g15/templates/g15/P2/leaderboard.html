@@ -26,7 +26,7 @@
     <script src="{% static 'vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 </head>
 
-<body style="background-color:#154D86">
+<body style="background-image: url('https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');">
     <!-- Top Navbar -->
     <nav class="navbar fixed-top navbar-dark">
         <div class="container-fluid">
@@ -62,8 +62,7 @@
     <!-- End off canvas Menu -->
 
     <!-- Main Body -->
-    <div class="main-container rounded" style="background-color: rgba(255, 255, 255, 1);position:absolute;top:8%;width:94%; margin-left:3%;margin-right:3%">
-        <div class="pg-title">Leaderboard</div>
+    <div class="main-container">
         <div class="header-2">Streaks</div>
         <div class="header-3">Challenge your friends by completing your routines!</div>
         <div class="board-bar" id="your-bar">
@@ -115,5 +114,12 @@
     <!-- Bootstrap Javascript utils -->
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
 </body>
-
+<style type="text/css">
+    .header-2 {
+        text-align: center;
+        font-size: 33px;
+        color: slategray;
+        font-weight:bold;
+    }
+</style>
 </html>
