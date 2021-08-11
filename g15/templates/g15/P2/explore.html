@@ -16,10 +16,10 @@
     <link href="{% static 'css/handy.css' %}" rel="stylesheet">
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     <link href="{% static 'css/btm-nav.css' %}" rel="stylesheet">
-
+    <link href="{% static 'css/leaderboard.css' %}" rel="stylesheet">
 </head>
 
-<body style="background-color:#154D86">
+<body style="background-image: url('https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');">
     <!-- Top Navbar -->
     <nav class="navbar fixed-top navbar-dark">
         <div class="container-fluid">
@@ -39,25 +39,36 @@
         <div class="offcanvas-body">
             <div style="position:fixed;top:25%;left:0%;width:100%;">
                 <div style="font: italic 20px sans-serif; color:white;position:relative;left:4%">Nicole</div>
-                <br/>
+                <br />
                 <div class="btn-group-vertical rounded-0" style="width:250px; position:absolute; left:0%;">
                     <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
-                        <img src="{% static 'svg/profile1.svg' %}" />  Profile</button>
+                        <img src="{% static 'svg/profile1.svg' %}" /> Profile</button>
                     <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
-                        <img src="{% static 'svg/invite1.svg' %}"/>  Invite a Friend</button>
+                        <img src="{% static 'svg/invite1.svg' %}" /> Invite a Friend</button>
                     <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
-                        <img src="{% static 'svg/settings1.svg' %}" />  Settings</button>
+                        <img src="{% static 'svg/settings1.svg' %}" /> Settings</button>
                 </div>
             </div>
-            <div style="position:absolute;bottom:3%;color:white;"><img src="{% static 'svg/feedback1.svg' %}" />      Feedback</div>
+            <div style="position:absolute;bottom:3%;color:white;"><img src="{% static 'svg/feedback1.svg' %}" /> Feedback</div>
         </div>
     </div>
     <!-- End off canvas Menu -->
 
+
     <!-- Main Body -->
     <div class="main-container">
-        <div class="pg-title">Explore</div>
-
+        <div class="pg-title">Add Routine</div>
+        <div class="header-2">Create Your Own Routine</div>
+        <div id="toppings-div" x-show="current === 3">
+            <div class="v2_27">
+                <span class="v2_49">Found a way to sleep better? Make it a habit, add multiple by seperating with commas! </span>
+                <!-- <div class="v4_13"></div> -->
+                <input id="routine-input" class="v4_13" type="text" name="routines" placeholder="Enter routine name, second routine, etc.." />
+                <div class="name">
+                    <div class="btn btn-primary bg-dark" onclick="submit()">Click to Confirm</div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- End Main Body -->
 
@@ -84,5 +95,31 @@
     <!-- Bootstrap Javascript utils -->
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
 </body>
+
+<script>
+    var info = [];
+    var socket = new WebSocket("ws://" + window.location.host + "/ws/draw");
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("data", () => ({
+            current: 0,
+            handleClick(e) {
+                var choice = parseInt(e.target.id.slice(-1));
+                info.push(choice);
+                this.current += 1;
+            },
+            submit() {
+                info.push(document.getElementById("routine-input").value);
+                console.log(info);
+                socket.send(
+                    JSON.stringify({
+                        uid: Date.now() % 10000,
+                        info: info,
+                    })
+                );
+                this.current += 1;
+            },
+        }));
+    });
+</script>
 
 </html>

@@ -16,26 +16,20 @@
     <link href="{% static 'css/handy.css' %}" rel="stylesheet">
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     <link href="{% static 'css/btm-nav.css' %}" rel="stylesheet">
+    <script src="{% static 'vendors/jquery/jquery-3.3.1.min.js' %}"></script>
     <style type="text/css">
-        .header-2 {
-            text-align: center;
-            font-size: 33px;
-            color: slategray;
-            font-weight:bold;
-        }
-
         #row1 {
-          background-color: #E6E6E6;
+            background-color: #E6E6E6;
         }
     </style>
 
 </head>
 
-<body style= "background-image: url('https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');">
+<body style="background-image: url('https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');">
     <!-- Top Navbar -->
-    <nav class="navbar fixed-top navbar-dark">
+    <nav class="navbar fixed-top navbar-dark mt-3">
         <div class="container-fluid">
-            <button class="btn navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
+            <button class="btn navbar-toggler" style="border: 0; type=" button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
@@ -51,27 +45,26 @@
         <div class="offcanvas-body">
             <div style="position:fixed;top:25%;left:0%;width:100%;">
                 <div style="font: italic 20px sans-serif; color:white;position:relative;left:4%">Nicole</div>
-                <br/>
+                <br />
                 <div class="btn-group-vertical rounded-0" style="width:250px; position:absolute; left:0%;">
                     <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
-                        <img src="{% static 'svg/profile1.svg' %}" />  Profile</button>
+                        <img src="{% static 'svg/profile1.svg' %}" /> Profile</button>
                     <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
-                        <img src="{% static 'svg/invite1.svg' %}"/>  Invite a Friend</button>
+                        <img src="{% static 'svg/invite1.svg' %}" /> Invite a Friend</button>
                     <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
-                        <img src="{% static 'svg/settings1.svg' %}" />  Settings</button>
+                        <img src="{% static 'svg/settings1.svg' %}" /> Settings</button>
                 </div>
             </div>
-            <div style="position:absolute;bottom:3%;color:white;"><img src="{% static 'svg/feedback1.svg' %}" />      Feedback</div>
+            <div style="position:absolute;bottom:3%;color:white; left:8%"><img src="{% static 'svg/feedback1.svg' %}" /> Feedback</div>
         </div>
     </div>
     <!-- End off canvas Menu -->
 
     <!-- Main Body -->
     <div class="main-container">
-        <div>
-          <div class="header-2">Tracker</div>
+        <div class="header-2">Tracker</div>
 
-          <div class="row border-bottom border-secondary m-1">
+        <div class="row border-bottom border-secondary m-1">
             <div class="col-6">Days</div>
             <div class="col-1">1</div>
             <div class="col-1">2</div>
@@ -79,10 +72,10 @@
             <div class="col-1">4</div>
             <div class="col-1">5</div>
             <div class="col-1">6</div>
-          </div>
+        </div>
 
 
-          <div id="row1" class="row border-bottom border-secondary m-1">
+        <div id="row1" class="row border-bottom border-secondary m-1">
             <div class="col-6 border-end border-secondary ">&nbsp</div>
             <div class="col-1 border-end border-secondary "></div>
             <div class="col-1  border-end border-secondary"></div>
@@ -90,35 +83,35 @@
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1"></div>
-          </div>
+        </div>
 
-          <div class="row border-bottom border-secondary m-1">
+        <div class="row border-bottom border-secondary m-1">
             <div class="col-6 border-end border-secondary ">No coffee at night</div>
             <div class="col-1 border-end border-secondary p-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16" align="left">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-</svg></div>
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                </svg></div>
             <div class="col-1  border-end border-secondary p-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16" align="left">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-</svg></div>
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                </svg></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1"></div>
-          </div>
+        </div>
 
-          <div id="row1" class="row border-bottom border-secondary m-1">
+        <div id="row1" class="row border-bottom border-secondary m-1">
             <div class="col-6 border-end border-secondary ">Meditate</div>
             <div class="col-1 border-end border-secondary "></div>
             <div class="col-1  border-end border-secondary p-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16" align="left">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-</svg> </div>
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                </svg> </div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1"></div>
-          </div>
+        </div>
 
-          <div class="row border-bottom border-secondary m-1">
+        <div class="row border-bottom border-secondary m-1">
             <div class="col-6 border-end border-secondary ">Turn off phone at 10pm</div>
             <div class="col-1 border-end border-secondary "></div>
             <div class="col-1  border-end border-secondary"></div>
@@ -126,33 +119,33 @@
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1"></div>
-          </div>
+        </div>
 
-          <div id="row1" class="row border-bottom border-secondary m-1">
+        <div id="row1" class="row border-bottom border-secondary m-1">
             <div class="col-6 border-end border-secondary ">Sleep at 11pm Sharp</div>
             <div class="col-1 border-end border-secondary "></div>
             <div class="col-1  border-end border-secondary p-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16" align="left">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-</svg></div>
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                </svg></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1"></div>
-          </div>
+        </div>
 
-          <div class="row border-bottom border-secondary m-1">
+        <div class="row border-bottom border-secondary m-1">
             <div class="col-6 border-end border-secondary ">Don't nap past 6pm</div>
             <div class="col-1 border-end border-secondary p-1 "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16" align="left">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-</svg></div>
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                </svg></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1"></div>
-          </div>
+        </div>
 
-          <div id="row1" class="row border-bottom border-secondary m-1">
+        <div id="row1" class="row border-bottom border-secondary m-1">
             <div class="col-6 border-end border-secondary">Take magnesium supplement </div>
             <div class="col-1 border-end border-secondary "></div>
             <div class="col-1  border-end border-secondary"></div>
@@ -160,11 +153,7 @@
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1"></div>
-          </div>
-
-
-
-
+        </div>
     </div>
     <!-- End Main Body -->
 
@@ -176,7 +165,7 @@
         <div onclick="location.href='/g15/tracker/'" class="nav-btn">
             <img src="{% static 'svg/tracker2.svg' %}" />
         </div>
-        <div onclick="location.href='/g15/explore'" class="nav-btn">
+        <div onclick="location.href='/g15/addRoutine'" class="nav-btn">
             <img src="{% static 'svg/add1.svg' %}" />
         </div>
         <div onclick="location.href='/g15/leaderboard'" class="nav-btn">
@@ -188,10 +177,12 @@
     </div>
     <!-- End Bottom-Nav -->
 
+    <!-- custom javascript -->
+    <script src="{% static 'scripts/main.js' %}"></script>
     <!-- Bootstrap Javascript utils -->
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
 </body>
-<style type="text/css">
+<!-- <style type="text/css">
     #title {
         text-align: center;
         font-size: 33px;
@@ -199,6 +190,6 @@
         font-weight: bold;
         padding-top: 14%;
     }
+</style> -->
 
-</style>
 </html>

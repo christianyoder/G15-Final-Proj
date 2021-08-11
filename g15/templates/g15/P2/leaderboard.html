@@ -16,7 +16,6 @@
     <link href="{% static 'css/handy.css' %}" rel="stylesheet">
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     <link href="{% static 'css/btm-nav.css' %}" rel="stylesheet">
-    <link href="{% static 'css/leaderboard.css' %}" rel="stylesheet">
     <!-- Custom fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,9 +27,9 @@
 
 <body style="background-image: url('https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');">
     <!-- Top Navbar -->
-    <nav class="navbar fixed-top navbar-dark">
+    <nav class="navbar fixed-top navbar-dark mt-3">
         <div class="container-fluid">
-            <button class="btn navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
+            <button class="btn navbar-toggler" style="border: 0; type=" button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
@@ -46,17 +45,17 @@
         <div class="offcanvas-body">
             <div style="position:fixed;top:25%;left:0%;width:100%;">
                 <div style="font: italic 20px sans-serif; color:white;position:relative;left:4%">Nicole</div>
-                <br/>
+                <br />
                 <div class="btn-group-vertical rounded-0" style="width:250px; position:absolute; left:0%;">
                     <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
-                        <img src="{% static 'svg/profile1.svg' %}" />  Profile</button>
+                        <img src="{% static 'svg/profile1.svg' %}" /> Profile</button>
                     <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
-                        <img src="{% static 'svg/invite1.svg' %}"/>  Invite a Friend</button>
+                        <img src="{% static 'svg/invite1.svg' %}" /> Invite a Friend</button>
                     <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
-                        <img src="{% static 'svg/settings1.svg' %}" />  Settings</button>
+                        <img src="{% static 'svg/settings1.svg' %}" /> Settings</button>
                 </div>
             </div>
-            <div style="position:absolute;bottom:3%;color:white;"><img src="{% static 'svg/feedback1.svg' %}" />      Feedback</div>
+            <div style="position:absolute;bottom:3%;color:white; left:8%"><img src="{% static 'svg/feedback1.svg' %}" /> Feedback</div>
         </div>
     </div>
     <!-- End off canvas Menu -->
@@ -85,7 +84,6 @@
             <span>FRANK</span>
             <span style="margin-right: -90%;">0 Day</span>
         </div>
-        <div class="btn btn-primary bg-dark" onclick="dayChange()">Demo Day Change</div>
     </div>
     <!-- End Main Body -->
 
@@ -97,7 +95,7 @@
         <div onclick="location.href='/g15/tracker/'" class="nav-btn">
             <img src="{% static 'svg/tracker1.svg' %}" />
         </div>
-        <div onclick="location.href='/g15/explore'" class="nav-btn">
+        <div onclick="location.href='/g15/addRoutine'" class="nav-btn">
             <img src="{% static 'svg/add1.svg' %}" />
         </div>
         <div onclick="location.href='/g15/leaderboard'" class="nav-btn">
@@ -109,8 +107,8 @@
     </div>
     <!-- End Bottom-Nav -->
 
-    <!-- page specific javascript -->
-    <script src="{% static 'scripts/leaderboard.js' %}"></script>
+    <!-- custom javascript -->
+    <script src="{% static 'scripts/main.js' %}"></script>
     <!-- Bootstrap Javascript utils -->
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
 </body>
@@ -119,7 +117,8 @@
         text-align: center;
         font-size: 33px;
         color: slategray;
-        font-weight:bold;
+        font-weight: bold;
     }
 </style>
+
 </html>

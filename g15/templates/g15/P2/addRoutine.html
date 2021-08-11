@@ -16,15 +16,15 @@
     <link href="{% static 'css/handy.css' %}" rel="stylesheet">
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     <link href="{% static 'css/btm-nav.css' %}" rel="stylesheet">
-
+    <script src="{% static 'vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 </head>
 
-<body style="background-color:#154D86">
+<body style="background-image: url('https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80');">
     <!-- Top Navbar -->
-    <nav class="navbar fixed-top navbar-dark">
+    <nav class="navbar fixed-top navbar-dark mt-3">
         <div class="container-fluid">
-            <button class="btn navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
-                <span class="navbar-toggler-icon"></span>
+            <button class="btn navbar-toggler" style="border: 0;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
+                <span class="navbar-toggler-icon" style="color: white;"></span>
             </button>
         </div>
     </nav>
@@ -39,20 +39,51 @@
         <div class="offcanvas-body">
             <div style="position:fixed;top:25%;left:0%;width:100%;">
                 <div style="font: italic 20px sans-serif; color:white;position:relative;left:4%">Nicole</div>
-                <br/>
+                <br />
                 <div class="btn-group-vertical rounded-0" style="width:250px; position:absolute; left:0%;">
                     <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
-                        <img src="{% static 'svg/profile1.svg' %}" />  Profile</button>
+                        <img src="{% static 'svg/profile1.svg' %}" /> Profile</button>
                     <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
-                        <img src="{% static 'svg/invite1.svg' %}"/>  Invite a Friend</button>
+                        <img src="{% static 'svg/invite1.svg' %}" /> Invite a Friend</button>
                     <button type="button" class="btn" style="text-align:left;background-color:#4a5a6b;color:white">
-                        <img src="{% static 'svg/settings1.svg' %}" />  Settings</button>
+                        <img src="{% static 'svg/settings1.svg' %}" /> Settings</button>
                 </div>
             </div>
-            <div style="position:absolute;bottom:3%;color:white;"><img src="{% static 'svg/feedback1.svg' %}" />      Feedback</div>
+            <div style="position:absolute;bottom:3%;color:white; left:8%;"><img src="{% static 'svg/feedback1.svg' %}" /> Feedback</div>
         </div>
     </div>
     <!-- End off canvas Menu -->
+
+
+    <!-- Main Body -->
+    <div class="main-container">
+        <div class="header-2">Add Routine</div>
+        <div id="toppings-div" x-show="current === 3">
+            <div class="v2_27">
+                <div class="header-3" style="margin-bottom: 1%;">Found a way to sleep better? Make it a habit, add multiple by seperating with commas!</div>
+                <div class="header-3">Or select one from our suggestions below!</div>
+                <div class="suggestions">
+                    <div class="row" style="width: 100%">
+                        <div class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">No coffee at night</a>
+                            <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Meditate</a>
+                            <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Take supplement</a>
+                            <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Turn off phone before bed</a>
+                            <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Suggestion 1</a>
+                            <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Suggestion 2</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="v4_13"></div> -->
+                <input onfocus="this.placeholder=''" class="list-group-item" id="routine-input" type="text" name="routines" placeholder="Enter first routine, second routine..." />
+                <div class="name" style="display: flex; justify-content: center;">
+                    <div class="btn btn-secondary" onclick="submit()" style="background-color: slategrey;">Click to Confirm</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Body -->
 
     <!-- Bottom-Nav -->
     <div class="btm-nav-bar">
@@ -62,7 +93,7 @@
         <div onclick="location.href='/g15/tracker/'" class="nav-btn">
             <img src="{% static 'svg/tracker1.svg' %}" />
         </div>
-        <div onclick="location.href='/g15/explore'" class="nav-btn">
+        <div onclick="location.href='/g15/addRoutine'" class="nav-btn">
             <img src="{% static 'svg/add2.svg' %}" />
         </div>
         <div onclick="location.href='/g15/leaderboard'" class="nav-btn">
@@ -74,8 +105,36 @@
     </div>
     <!-- End Bottom-Nav -->
 
+    <!-- custom javascript -->
+    <script src="{% static 'scripts/main.js' %}"></script>
     <!-- Bootstrap Javascript utils -->
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
 </body>
+
+<script>
+    var info = [];
+    var socket = new WebSocket("ws://" + window.location.host + "/ws/draw");
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("data", () => ({
+            current: 0,
+            handleClick(e) {
+                var choice = parseInt(e.target.id.slice(-1));
+                info.push(choice);
+                this.current += 1;
+            },
+            submit() {
+                info.push(document.getElementById("routine-input").value);
+                console.log(info);
+                socket.send(
+                    JSON.stringify({
+                        uid: Date.now() % 10000,
+                        info: info,
+                    })
+                );
+                this.current += 1;
+            },
+        }));
+    });
+</script>
 
 </html>

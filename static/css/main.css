@@ -6,6 +6,7 @@
   width: 92%;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 1.5rem;
+  padding: 5%;
 }
 
 .pg-title {
@@ -16,4 +17,75 @@
   color: white;
   right: 0;
   top: -6%;
+}
+
+.header-2 {
+  text-align: center;
+  font-size: 33px;
+  color: slategray;
+  font-weight: bold;
+}
+
+.header-3 {
+  font-size: 3vw;
+  font-style: italic;
+  color: grey;
+  font-weight: 600;
+  margin-bottom: 10%;
+}
+
+.board-chart {
+  margin-top: 10%;
+  background-color: lightcoral;
+  width: 100%;
+  height: 80%;
+}
+
+.board-bar {
+  font-family: 'IBM Plex Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6%;
+  background-color: #b7cbf0;
+  margin-bottom: 4%;
+  border-radius: 0.2rem;
+  font-size: 3.5vw;
+  padding: 2%;
+}
+
+#your-bar {
+  background-color: #7f97c4;
+  width: 85%; 
+  font-weight: 900;
+}
+
+/* add routine */
+#routine-input {
+  width: 100%;
+  margin-bottom: 12%;
+  border-radius: 0.3rem;
+}
+
+.suggestions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.list-group {
+  padding: 0;
+  margin-bottom: 12%;
+}
+
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+  background-color: slategrey;
+  border-color: slategrey;
+}
+
+.hiddenDiv {
+  height: 100%;
+  width: 100%;
+  background-color: pink;
 }
