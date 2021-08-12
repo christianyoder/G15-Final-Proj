@@ -76,7 +76,7 @@
                 </div>
 
                 <!-- <div class="v4_13"></div> -->
-                <input onfocus="this.placeholder=''" class="list-group-item" id="routine-input" type="text" name="routines" placeholder="Enter first routine, second routine..." />
+                <input onfocus="this.placeholder=''" class="list-group-item" id="ingredients-input" type="text" name="routines" placeholder="Enter first routine, second routine..." />
                 <div class="name" style="display: flex; justify-content: center;">
                     <div class="btn btn-secondary" onclick="submit()" style="background-color: slategrey;">Click to Confirm</div>
                 </div>
@@ -113,28 +113,29 @@
 
 <script>
     var info = [];
-    var socket = new WebSocket("ws://" + window.location.host + "/ws/draw");
+    var socket = new WebSocket("ws://" + window.location.host + "/ws/g15");
     document.addEventListener("alpine:init", () => {
-        Alpine.data("data", () => ({
-            current: 0,
-            handleClick(e) {
-                var choice = parseInt(e.target.id.slice(-1));
-                info.push(choice);
-                this.current += 1;
-            },
-            submit() {
-                info.push(document.getElementById("routine-input").value);
-                console.log(info);
-                socket.send(
-                    JSON.stringify({
-                        uid: Date.now() % 10000,
-                        info: info,
-                    })
-                );
-                this.current += 1;
-            },
-        }));
+      Alpine.data("data", () => ({
+        current: 0,
+        handleClick(e) {
+          var choice = parseInt(e.target.id.slice(-1));
+          info.push(choice);
+          this.current += 1;
+        },
+        submit() {
+          info.push(document.getElementById("ingredients-input").value);
+          console.log(info);
+          socket.send(
+            JSON.stringify({
+              uid: Date.now() % 10000,
+              info: info,
+            })
+          );
+          this.current += 1;
+        },
+      }));
     });
-</script>
+  </script>
+
 
 </html>

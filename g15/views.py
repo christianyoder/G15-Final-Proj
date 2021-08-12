@@ -21,3 +21,8 @@ def e(request):
 
 def f(request):
     return render(request, 'g15/P2/social.html')
+
+def room(request, room_name):
+    return render(request, 'g15/room.html', {
+        'room_name': room_name
+    })

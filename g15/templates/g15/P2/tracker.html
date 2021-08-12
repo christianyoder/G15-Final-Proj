@@ -17,6 +17,9 @@
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
     <link href="{% static 'css/btm-nav.css' %}" rel="stylesheet">
     <script src="{% static 'vendors/jquery/jquery-3.3.1.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style type="text/css">
         #row1 {
             background-color: #E6E6E6;
@@ -154,6 +157,13 @@
             <div class="col-1  border-end border-secondary"></div>
             <div class="col-1"></div>
         </div>
+        <div class="card">
+            <ul class="list-group" x-show="received">
+                <template x-for="topping in getToppings">
+                    <li class="list-group-item"><span x-text="topping"></span></li>
+                </template>
+            </ul>
+        </div>
     </div>
     <!-- End Main Body -->
 
@@ -181,6 +191,46 @@
     <script src="{% static 'scripts/main.js' %}"></script>
     <!-- Bootstrap Javascript utils -->
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script>
+        var socket = new WebSocket(
+            'ws://' + window.location.host + '/ws/g15');
+        var data = {
+            received: false,
+            toppings: [],
+            get getToppings() {
+                return this.toppings.map(name =>
+                    name.charAt(0).toUpperCase() + name.slice(1)
+                );
+            },
+            get getToppingsStr() {
+                return this.getToppings.join(', ');
+            },
+        }
+        document.addEventListener('alpine:init', () => {
+            data = Alpine.reactive(data);
+            Alpine.data('data', () => (data))
+        })
+        socket.onmessage = function (receivedMessage) {
+            var received = JSON.parse(receivedMessage.data);
+            console.log("Received: " + JSON.stringify(received));
+            console.log("type", typeof received.info);
+            data.received = true;
+            receivedToppings = received.info[3].toLowerCase().split(', ');
+            console.log(receivedToppings);
+            if (data.toppings.length === 0) {
+                data.toppings = receivedToppings;
+            } else {
+                var set = new Set();
+                data.toppings.forEach(t => set.add(t));
+                receivedToppings.forEach(t => set.add(t));
+                data.toppings = Array.from(set);
+            }
+        }
+    
+        socket.onclose = function (e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+    </script>
 </body>
 
 </html>

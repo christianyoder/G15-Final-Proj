@@ -9,5 +9,6 @@ urlpatterns = [
     path('tracker/', views.d, name='tracker'),
     path('leaderboard/', views.e, name='leaderboard'),
     path('social/', views.f, name='social'),
+    path('<str:room_name>/', views.room, name='room'),
 ]
 
