@@ -16,8 +16,14 @@ def c(request):
 def d(request):
     return render(request, 'g15/P2/tracker.html')
 
+def s1(request):
+    return render(request, 'g15/P2/trackerDemo.html')
+
 def e(request):
     return render(request, 'g15/P2/leaderboard.html')
+
+def s2(request):
+    return render(request, 'g15/P2/leaderboardDemo.html')    
 
 def f(request):
     return render(request, 'g15/P2/social.html')

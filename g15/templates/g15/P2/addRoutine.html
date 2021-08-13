@@ -76,9 +76,11 @@
                 </div>
 
                 <!-- <div class="v4_13"></div> -->
-                <input onfocus="this.placeholder=''" class="list-group-item" id="ingredients-input" type="text" name="routines" placeholder="Enter first routine, second routine..." />
+                
+                
                 <div class="name" style="display: flex; justify-content: center;">
-                    <div class="btn btn-secondary" onclick="submit()" style="background-color: slategrey;">Click to Confirm</div>
+                    <input onfocus="this.placeholder=''" class="list-group-item" id="ingredients-input" type="text" name="routines" placeholder="Enter first routine, second routine..." />
+                    <button type="button" class="btn btn-secondary" style="background-color: slategrey;">Click to Confirm</button>
                 </div>
             </div>
         </div>
@@ -90,7 +92,7 @@
         <div onclick="location.href='/g15/home'" class="nav-btn" style="width: 10%">
             <img src="{% static 'svg/home1.svg' %}" />
         </div>
-        <div onclick="location.href='/g15/tracker/'" class="nav-btn">
+        <div onclick="location.href='/g15/trackerDemo/'" class="nav-btn">
             <img src="{% static 'svg/tracker1.svg' %}" />
         </div>
         <div onclick="location.href='/g15/addRoutine'" class="nav-btn">
